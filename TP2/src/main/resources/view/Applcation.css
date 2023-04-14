@@ -1,0 +1,13 @@
+.pane
+{
+	-fx-background-color : #003C38;
+}
+
+.textfield
+{
+		-fx-fill : #19FF00;
+}
+.button
+{
+	-fx-border-color : #000000 
+}
