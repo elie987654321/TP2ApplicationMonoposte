@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <AnchorPane prefHeight="555.0" prefWidth="516.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ApplicationGraphicalController">
    <stylesheets>
-      <URL value="@Application.css" />
+      <URL value="@Applcation.css" />
    </stylesheets>
    <children>
       <Pane layoutX="74.0" layoutY="57.0" prefHeight="316.0" prefWidth="379.0">
