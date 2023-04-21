@@ -19,6 +19,6 @@ public class ApplicationController extends Application {
         primaryStage.setScene(scene);
         primaryStage.show();
 
-
+        
     }
 }
