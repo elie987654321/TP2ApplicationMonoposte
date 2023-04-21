@@ -9,7 +9,7 @@ public class Facture {
     private double taxesApplicables;
     private double totalAvecTaxes;
 
-    //Accesseur et mutateur
+    //Accesseurs et mutateurs
     public String getNomDeLAcheteur() {
         return nomDeLAcheteur;
     }

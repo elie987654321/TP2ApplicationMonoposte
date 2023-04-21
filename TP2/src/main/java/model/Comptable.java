@@ -3,15 +3,32 @@ package model;
 import java.util.*;
 
 public class Comptable {
+
     // Attributs
     private double totalDesDons;
-
     private HashMap<String, ModeDePaiement> modePaiements;
 
-    // Constructeurs
+    // Constructeur
     public Comptable(double totalDesDons) {
         this.totalDesDons = totalDesDons;
         modePaiements = new HashMap<String, ModeDePaiement>() ;
+    }
+
+    //Accesseur et mutateur
+    public HashMap<String, ModeDePaiement> getModePaiements() {
+        return modePaiements;
+    }
+
+    public void setModePaiements(HashMap<String, ModeDePaiement> modePaiements) {
+        this.modePaiements = modePaiements;
+    }
+
+    public double getTotalDesDons() {
+        return totalDesDons;
+    }
+
+    public void setTotalDesDons(double totalDesDons) {
+        this.totalDesDons = totalDesDons;
     }
 
     //Methodes
@@ -32,20 +49,4 @@ public class Comptable {
         return ModeDePaiement.POURCENTAGE * (facture.getTotalAvecTaxes() - (facture.getTotalAvecTaxes() *  facture.getModeDePaiement().getFrais()));
     }
 
-    public HashMap<String, ModeDePaiement> getModePaiements() {
-        return modePaiements;
-    }
-
-    //Accesseur et mutateur
-    public void setModePaiements(HashMap<String, ModeDePaiement> modePaiements) {
-        this.modePaiements = modePaiements;
-    }
-
-    public double getTotalDesDons() {
-        return totalDesDons;
-    }
-
-    public void setTotalDesDons(double totalDesDons) {
-        this.totalDesDons = totalDesDons;
-    }
 }
