@@ -1,10 +1,14 @@
 package model;
 
+import java.util.*;
+
 public class Comptable {
 
     // Attributs
     private double totalDesDons;
     private Facture currentFacture;
+
+    private HashMap<String, ModeDePaiement> modePaiements;
 
     // Constructeurs
     public Comptable() {
@@ -14,33 +18,19 @@ public class Comptable {
     public Comptable(double totalDesDons, Facture currentFacture) {
         this.totalDesDons = totalDesDons;
         this.currentFacture = currentFacture;
-    }
-
-    // Accesseurs et mutateurs
-    public Total getTotalDesDons() {
-        return totalDesDons;
-    }
-
-    public void setTotalDesDons(Total totalDesDons) {
-        this.totalDesDons = totalDesDons;
-    }
-
-    public Facture getCurrentFacture() {
-        return currentFacture;
-    }
-
-    public void setCurrentFacture(Facture currentFacture) {
-        this.currentFacture = currentFacture;
+        modePaiements = new HashMap<String, ModeDePaiement>() ;
     }
 
 
-    public void EntrerFacture()
+    private void CreerModesPaiements()
     {
-        total.EntrerFacture();
+        modePaiements.put("argent", new ModeDePaiement( "Argent", 0));
+        modePaiements.put("debit" , new ModeDePaiement( "Carte de debit", 0.01));
+        modePaiements.put("credit", new ModeDePaiement( "Carte de credit", 0.03));
     }
 
-    public void AjouterFactureAuTotal() {
-        total.AjouterFactureAuTotal();
+    private double CalculerDonFacture(Facture facture)
+    {
+        return ModeDePaiement.POURCENTAGE * (facture.totalAvecTaxes - (facture.totalAvecTaxes *  facture.modeDePaiement.frais));
     }
-
 }

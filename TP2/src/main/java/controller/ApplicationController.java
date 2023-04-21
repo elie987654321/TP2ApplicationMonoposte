@@ -19,27 +19,6 @@ public class ApplicationController extends Application {
         primaryStage.setScene(scene);
         primaryStage.show();
 
-    }
-
-    private double pourcentageTaxes;
-
-    private ModeDePaiement modeDePaiement;
-
-    public void Deroulement()
-    {
-        Comptable comptable = new Comptable();
-        comptable.CreerFacture();
-        Facture facture = new Facture();
-        comptable.SetNomFacture();
-        comptable.SetTotalSansTaxeFacture();
-        comptable.SetModePaiementFacture();
-        comptable.EntrerFacture();
-        comptable.AjouterFactureAuTotal();
-    }
-
-
-    private void GetPourcentageTaxes()
-    {
 
     }
 }
