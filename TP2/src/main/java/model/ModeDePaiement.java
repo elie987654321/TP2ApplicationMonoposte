@@ -4,9 +4,7 @@ public class ModeDePaiement{
 
     //Attributs
     public static final double POURCENTAGE = 0.02;
-
     private String nom;
-
     private double frais;
 
     //Constructeur
@@ -14,8 +12,7 @@ public class ModeDePaiement{
     {
         this.nom = nom;
         this.frais = frais;
-    };
-
+    }
 
     //Accesseur et mutateur
     public String getNom() {
