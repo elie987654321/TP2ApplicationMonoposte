@@ -29,6 +29,11 @@ public class Comptable {
         modePaiements.put("credit", new ModeDePaiement( "Carte de credit", 0.03));
     }
 
+    private void AjouterATotalDon()
+    {
+        
+    }
+
     private double CalculerDonFacture(Facture facture)
     {
         return ModeDePaiement.POURCENTAGE * (facture.totalAvecTaxes - (facture.totalAvecTaxes *  facture.modeDePaiement.frais));
