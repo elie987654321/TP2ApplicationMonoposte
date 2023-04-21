@@ -4,9 +4,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import model.Comptable;
-import model.Facture;
-import model.ModeDePaiement;
+
 
 public class ApplicationController extends Application {
     @Override
@@ -18,7 +16,6 @@ public class ApplicationController extends Application {
         Scene scene = new Scene(fxmlLoader1.load());
         primaryStage.setScene(scene);
         primaryStage.show();
-
 
     }
 }
