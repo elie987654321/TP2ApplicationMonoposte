@@ -2,11 +2,17 @@ package model;
 
 public class Total {
 
-    public void EntrerFacture()
-    {
-        
+    // Attribut
+    private double totalDesDons;
+
+    // Accesseur et mutateur
+    public double getTotalDesDons() {
+        return totalDesDons;
     }
 
-    public void AjouterFactureAuTotal() {
+    public void setTotalDesDons(double totalDesDons) {
+        this.totalDesDons = totalDesDons;
     }
+
+
 }

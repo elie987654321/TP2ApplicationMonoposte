@@ -6,8 +6,7 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import model.Comptable;
 import model.Facture;
-import model.ModePaiement;
-import model.Variables;
+import model.ModeDePaiement;
 
 public class ApplicationController extends Application {
     @Override
@@ -24,7 +23,7 @@ public class ApplicationController extends Application {
 
     private double pourcentageTaxes;
 
-    private ModePaiement modePaiement;
+    private ModeDePaiement modeDePaiement;
 
     public void Deroulement()
     {
@@ -33,7 +32,6 @@ public class ApplicationController extends Application {
         Facture facture = new Facture();
         comptable.SetNomFacture();
         comptable.SetTotalSansTaxeFacture();
-        this.pourcentageTaxes = Variables.GetPourcentageTaxes();
         comptable.SetModePaiementFacture();
         comptable.EntrerFacture();
         comptable.AjouterFactureAuTotal();

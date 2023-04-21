@@ -1,23 +1,38 @@
 package model;
 
 public class Comptable {
-    Total total;
-    Facture currentFacture;
 
-    public void CreerFacture() {
+    // Attributs
+    private double totalDesDons;
+    private Facture currentFacture;
+
+    // Constructeurs
+    public Comptable() {
+
     }
 
-    public void SetNomFacture() {
-        Facture.SetNom();
+    public Comptable(double totalDesDons, Facture currentFacture) {
+        this.totalDesDons = totalDesDons;
+        this.currentFacture = currentFacture;
     }
 
-    public void SetTotalSansTaxeFacture() {
-        currentFacture.SetTotalSansTaxe();
+    // Accesseurs et mutateurs
+    public Total getTotalDesDons() {
+        return totalDesDons;
     }
 
-    public void SetModePaiementFacture() {
-        currentFacture.SetModePaiement();
+    public void setTotalDesDons(Total totalDesDons) {
+        this.totalDesDons = totalDesDons;
     }
+
+    public Facture getCurrentFacture() {
+        return currentFacture;
+    }
+
+    public void setCurrentFacture(Facture currentFacture) {
+        this.currentFacture = currentFacture;
+    }
+
 
     public void EntrerFacture()
     {
@@ -27,4 +42,5 @@ public class Comptable {
     public void AjouterFactureAuTotal() {
         total.AjouterFactureAuTotal();
     }
+
 }
