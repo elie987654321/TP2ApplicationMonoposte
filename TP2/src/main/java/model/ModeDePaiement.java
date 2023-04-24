@@ -2,19 +2,19 @@ package model;
 
 public class ModeDePaiement{
 
-    //Attributs
+    // Attributs
     public static final double POURCENTAGE = 0.02;
     private String nom;
     private double frais;
 
-    //Constructeur
+    // Constructeur avec paramètres
     public ModeDePaiement(String nom, double frais)
     {
         this.nom = nom;
         this.frais = frais;
     }
 
-    //Accesseur et mutateur
+    // Accesseurs et mutateurs
     public String getNom() {
         return nom;
     }

@@ -2,23 +2,19 @@ package model;
 
 public class Facture {
 
-    //Attributs
+    // Attributs
     private String nomDeLAcheteur;
     private ModeDePaiement modeDePaiement;
     private double totalSansTaxes;
     private double taxesApplicables;
     private double totalAvecTaxes;
 
-    //Constructeur
-    public Facture(String nomDeLAcheteur, ModeDePaiement modeDePaiement, double totalSansTaxes, double taxesApplicables, double totalAvecTaxes) {
-        this.nomDeLAcheteur = nomDeLAcheteur;
-        this.modeDePaiement = modeDePaiement;
-        this.totalSansTaxes = totalSansTaxes;
-        this.taxesApplicables = taxesApplicables;
-        this.totalAvecTaxes = totalAvecTaxes;
+    // Constructeur par défaut
+    public Facture(){
+
     }
 
-    //Accesseurs et mutateurs
+    // Accesseurs et mutateurs
     public String getNomDeLAcheteur() {
         return nomDeLAcheteur;
     }
