@@ -37,19 +37,19 @@ public class Comptable {
         return new Facture();
     }
 
-    private void CreerModesPaiements()
+    public void CreerModesPaiements()
     {
         modePaiements.put("argent", new ModeDePaiement( "Argent", 0));
         modePaiements.put("debit" , new ModeDePaiement( "Carte de debit", 0.01));
         modePaiements.put("credit", new ModeDePaiement( "Carte de credit", 0.03));
     }
 
-    private void AjouterFactureATotalDon(Facture facture)
+    public void AjouterFactureATotalDon(Facture facture)
     {
         this.totalDesDons += CalculerDonFacture(facture);
     }
 
-    private double CalculerDonFacture(Facture facture)
+    public double CalculerDonFacture(Facture facture)
     {
         return ModeDePaiement.POURCENTAGE * (facture.getTotalAvecTaxes() - (facture.getTotalAvecTaxes() *  facture.getModeDePaiement().getFrais()));
     }

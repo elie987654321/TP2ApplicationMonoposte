@@ -15,12 +15,12 @@ public class Facture {
     }
 
     // Constructeur avec paramètres
-    public Facture(String nomDeLAcheteur, ModeDePaiement modeDePaiement, double totalSansTaxes, double taxesApplicables, double totalAvecTaxes) {
+    public Facture(String nomDeLAcheteur, ModeDePaiement modeDePaiement, double totalSansTaxes, double taxesApplicables) {
         this.nomDeLAcheteur = nomDeLAcheteur;
         this.modeDePaiement = modeDePaiement;
         this.totalSansTaxes = totalSansTaxes;
         this.taxesApplicables = taxesApplicables;
-        this.totalAvecTaxes = totalAvecTaxes;
+        this.totalAvecTaxes = totalSansTaxes + taxesApplicables;
     }
 
     // Accesseurs et mutateurs
