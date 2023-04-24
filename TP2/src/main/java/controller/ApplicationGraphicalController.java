@@ -1,30 +1,35 @@
 package controller;
 
 import javafx.fxml.*;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.TextField;
+import model.Facture;
 import model.ModeDePaiement;
 
 import java.awt.*;
 
 public class ApplicationGraphicalController {
-
+    @FXML
+    private TextField nomAcheteur;
 
     @FXML
-    String nomAcheteur;
+    private ChoiceBox modePaiement;
 
     @FXML
-    ModeDePaiement modePaiement;
+    private TextField totalSansTaxe;
 
     @FXML
-    TextField totalSansTaxe;
+    private TextField taxesApplicables;
 
     @FXML
-    TextField taxesApplicables;
+    private TextField totalAvecTaxes;
 
-    @FXML
-    TextField totalAvecTaxes;
+    private ModeDePaiement modePaiementEnum;
 
+    private Facture facture;
 
     public ApplicationGraphicalController()
     {
+
     }
 }
