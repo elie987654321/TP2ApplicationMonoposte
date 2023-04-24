@@ -51,7 +51,8 @@
       <Button layoutX="86.0" layoutY="382.0" mnemonicParsing="false" prefHeight="85.0" prefWidth="182.0" text="Ajouter">
          <font>
             <Font size="24.0" />
-         </font></Button>
+         </font>
+      </Button>
       <Text layoutX="274.0" layoutY="408.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total des dons :">
          <font>
             <Font size="24.0" />
