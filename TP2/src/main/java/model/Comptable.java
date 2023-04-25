@@ -1,5 +1,6 @@
 package model;
 
+import java.text.DecimalFormat;
 import java.util.*;
 
 
@@ -12,7 +13,7 @@ public class Comptable {
     // Constructeur par défaut
     public Comptable() {
         this.totalDesDons = 0.00;
-        modePaiements = new HashMap<String, ModeDePaiement>();
+        this.modePaiements = new HashMap<String, ModeDePaiement>();
     }
 
      // Accesseurs et mutateurs
@@ -33,7 +34,7 @@ public class Comptable {
     }
 
     // Methodes
-    private Facture creerUneFacture(){
+    public Facture creerUneFacture(){
         return new Facture();
     }
 
@@ -51,6 +52,17 @@ public class Comptable {
 
     public double CalculerDonFacture(Facture facture)
     {
-        return ModeDePaiement.POURCENTAGE * (facture.getTotalAvecTaxes() - (facture.getTotalAvecTaxes() *  facture.getModeDePaiement().getFrais()));
+        if (facture.getTotalAvecTaxes() > 0){
+            double caluclDon =  ModeDePaiement.POURCENTAGE * (facture.getTotalAvecTaxes() - (facture.getTotalAvecTaxes() *  facture.getModeDePaiement().getFrais()));
+
+            DecimalFormat df = new DecimalFormat("#.##");
+            String formattedNumber = df.format(caluclDon);
+            double montantArrondi = Double.parseDouble(formattedNumber);
+
+            return montantArrondi;
+
+        }else {
+            return 0.00;
+        }
     }
 }

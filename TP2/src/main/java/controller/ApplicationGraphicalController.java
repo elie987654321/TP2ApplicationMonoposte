@@ -77,7 +77,7 @@ public class ApplicationGraphicalController {
 
     public int ApplicationController()
     {
-
+        return 0;
     }
 
     public ApplicationGraphicalController()
