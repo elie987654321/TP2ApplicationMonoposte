@@ -40,9 +40,9 @@ public class Comptable {
 
     public void CreerModesPaiements()
     {
-        modePaiements.put("argent", new ModeDePaiement( "Argent", 0));
-        modePaiements.put("debit" , new ModeDePaiement( "Carte de debit", 0.01));
-        modePaiements.put("credit", new ModeDePaiement( "Carte de credit", 0.03));
+        modePaiements.put("argent", ModeDePaiementCreateur.creerModeDePaiement( "Argent", 0));
+        modePaiements.put("debit" , ModeDePaiementCreateur.creerModeDePaiement("Debit", 0.01));
+        modePaiements.put("credit", ModeDePaiementCreateur.creerModeDePaiement( "Credit", 0.03));
     }
 
     public void AjouterFactureATotalDon(Facture facture)
