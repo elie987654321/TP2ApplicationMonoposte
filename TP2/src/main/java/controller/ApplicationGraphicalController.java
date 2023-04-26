@@ -3,8 +3,11 @@ package controller;
 import javafx.event.ActionEvent;
 import javafx.fxml.*;
 import javafx.scene.control.*;
+import javafx.scene.text.Text;
 import model.*;
-import org.w3c.dom.Text;
+
+import java.util.ArrayList;
+import java.util.HashMap;
 
 public class ApplicationGraphicalController {
     @FXML
@@ -19,16 +22,48 @@ public class ApplicationGraphicalController {
     private TextField totalAvecTaxes;
 
     @FXML
+    Text textErreur;
+
+    @FXML
+    private Text totalDons;
+
+    @FXML
     private Button ajouter;
 
     private Comptable comptable;
 
-    private void HandleBoutonClickAjouter(ActionEvent eventHandler)
+
+    ArrayList<String> modesPaiementString;
+
+    //La longuer de la boite quand on clique sur la choice box s'adapte au text a l'interieur.
+    // On ajoute du text pour avoir la bonne taille, trop petit sinon
+    private String textFixChoiceBox = "                               ";
+
+    HashMap<String, ModeDePaiement> modesPaiementMap;
+
+    private void HandleBoutonClickAjouter(ActionEvent event)
     {
         Facture factureAEntrer = new Facture();
-        if(ChaineValide(totalSansTaxe.getText()) && ChaineValide(totalAvecTaxes.getText()) && ChaineValide(totalAvecTaxes.getText()))
+        if((nomAcheteur.getText() != "") && ChaineValide(totalSansTaxe.getText()) && ChaineValide(taxesApplicables.getText()) && ChaineValide(totalAvecTaxes.getText()))
         {
+            textErreur.setVisible(false);
+            Facture facture = new Facture();
 
+            String stringAvantFix = modePaiement.getValue().toString();
+            stringAvantFix = stringAvantFix.replace(" " ,"");
+
+            facture.setNomDeLAcheteur(nomAcheteur.getText());
+            facture.setTotalSansTaxes(Double.parseDouble(totalSansTaxe.getText()));
+            facture.setTaxesApplicables(Double.parseDouble(taxesApplicables.getText()));
+            facture.setTotalAvecTaxes(Double.parseDouble(totalAvecTaxes.getText()));
+            facture.setModeDePaiement(modesPaiementMap.get(stringAvantFix));
+
+            comptable.AjouterFactureATotalDon(facture);
+            totalDons.setText(comptable.getTotalDesDons() + "$");
+        }
+        else
+        {
+            textErreur.setVisible(true);
         }
   }
 
@@ -84,13 +119,21 @@ public class ApplicationGraphicalController {
     {
 
     }
-
-    public void Initialize()
+    @FXML
+    public void initialize()
     {
         comptable = new Comptable();
 
         ajouter.setOnAction(this::HandleBoutonClickAjouter);
 
+        comptable.CreerModesPaiements();
+        modesPaiementMap = comptable.getModePaiements();
+        modesPaiementString = new ArrayList<String>();
+        modesPaiementString.addAll(modesPaiementMap.keySet());
 
+        for(int i = 0; i < modesPaiementString.size(); i++)
+        {
+            modePaiement.getItems().add(modesPaiementString.get(i) + textFixChoiceBox);
+        }
     }
 }
