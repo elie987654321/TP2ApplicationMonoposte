@@ -13,11 +13,11 @@ public class Credit implements ModeDePaiement {
     // Accesseurs et mutateurs
     @Override
     public double getFrais() {
-        return 0;
+        return frais;
     }
 
     @Override
     public void setFrais(double frais) {
-
+        this.frais = frais;
     }
 }
