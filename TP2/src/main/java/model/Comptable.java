@@ -55,7 +55,7 @@ public class Comptable {
         if (facture.getTotalAvecTaxes() > 0){
             double caluclDon =  ModeDePaiement.POURCENTAGE * (facture.getTotalAvecTaxes() - (facture.getTotalAvecTaxes() *  facture.getModeDePaiement().getFrais()));
 
-            DecimalFormat df = new DecimalFormat("#.##");
+            DecimalFormat df = new DecimalFormat("#,##");
             String formattedNumber = df.format(caluclDon);
             double montantArrondi = Double.parseDouble(formattedNumber);
 
