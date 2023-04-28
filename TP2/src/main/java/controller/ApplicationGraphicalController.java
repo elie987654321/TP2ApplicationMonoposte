@@ -47,6 +47,10 @@ public class ApplicationGraphicalController {
 
     HashMap<String, ModeDePaiement> modesPaiementMap;
 
+    //Appeller quand on pese sur le bouton valider(ou annuler)
+    //Si les infos  sont deja valides, cela veut dire que l'on a deja valider et que le bouton est en mode annuler.
+    //On annule alors la validation. Si les infos ne sont pas deja validees, on calcul le total, on active le bouton ajouter et on
+    //Change le bouton valider pour annuler
     private void HandleButtonClickValider(ActionEvent event)
     {
         if(infosValidees == false)
@@ -77,6 +81,8 @@ public class ApplicationGraphicalController {
 
 
 
+    //Appele quand on clique sur le bouton ajouter.
+    //Ajoute le montant au total puis reinitialise les champs
     private void HandleBoutonClickAjouter(ActionEvent event)
     {
 
@@ -109,6 +115,7 @@ public class ApplicationGraphicalController {
         }
   }
 
+  //Permet de decider si les champs peuvent etre editer ou pas
   public void setInputEditable(boolean value)
   {
       nomAcheteur.setEditable(value);
